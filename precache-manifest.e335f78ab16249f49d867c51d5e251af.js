@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/dva-final-project/static/media/alphabet.2476c334.csv"
   },
   {
-    "revision": "b0a4a46069084830d65cd8de90351863",
+    "revision": "d37741c3c87383a9da6a8d81e4c88899",
     "url": "/dva-final-project/index.html"
   }
 ];
