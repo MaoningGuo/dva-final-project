@@ -1,7 +1,7 @@
 {
   "main.css": "/dva-final-project/static/css/main.d13182aa.chunk.css",
-  "main.js": "/dva-final-project/static/js/main.ee58edd8.chunk.js",
-  "main.js.map": "/dva-final-project/static/js/main.ee58edd8.chunk.js.map",
+  "main.js": "/dva-final-project/static/js/main.a50809a5.chunk.js",
+  "main.js.map": "/dva-final-project/static/js/main.a50809a5.chunk.js.map",
   "static/css/1.2a11cfaf.chunk.css": "/dva-final-project/static/css/1.2a11cfaf.chunk.css",
   "static/js/1.babe1274.chunk.js": "/dva-final-project/static/js/1.babe1274.chunk.js",
   "static/js/1.babe1274.chunk.js.map": "/dva-final-project/static/js/1.babe1274.chunk.js.map",
@@ -11,6 +11,6 @@
   "static/css/1.2a11cfaf.chunk.css.map": "/dva-final-project/static/css/1.2a11cfaf.chunk.css.map",
   "static/css/main.d13182aa.chunk.css.map": "/dva-final-project/static/css/main.d13182aa.chunk.css.map",
   "index.html": "/dva-final-project/index.html",
-  "precache-manifest.e335f78ab16249f49d867c51d5e251af.js": "/dva-final-project/precache-manifest.e335f78ab16249f49d867c51d5e251af.js",
+  "precache-manifest.01e0a1a694f744030edb3edc98e16538.js": "/dva-final-project/precache-manifest.01e0a1a694f744030edb3edc98e16538.js",
   "service-worker.js": "/dva-final-project/service-worker.js"
 }
