@@ -1,10 +1,7 @@
-import React, { useRef, useEffect, createRef } from "react";
+import React, { useRef } from "react";
 import * as d3 from "d3"
-import rd3 from 'react-d3-library';
 
 import alphabets from "./alphabet.csv"
-
-const RD3Component = rd3.Component;
 
 function createBarChart(data, {
     x = (d, i) => i, // given d in data, returns the (ordinal) x-value
