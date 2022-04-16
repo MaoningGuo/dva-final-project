@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Router>
+    <Router basename='dva-final-project'>
       <Routes className="root-router">
         <Route path='/' element={<LandingComponent />} />
         <Route exact path='/bars' element={<BarCharts />} />
