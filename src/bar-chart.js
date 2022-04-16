@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import * as d3 from "d3"
 
 import alphabets from "./alphabet.csv"

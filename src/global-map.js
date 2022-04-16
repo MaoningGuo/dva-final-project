@@ -77,7 +77,7 @@ class Versor {
 
 const GlobeMap = props => {
     const [world, setWorld] = useState('');
-
+    let name = '';
     const getWorld = async () => {
         await d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
             .then(world => {
@@ -90,7 +90,6 @@ const GlobeMap = props => {
     const sphere = ({ type: "Sphere" })
     const tilt = 20
     const height = Math.min(width, 720)
-    let name = ""
 
     const draw = async (context) => {
         const land = topojson.feature(world, world.objects.land)
@@ -132,7 +131,7 @@ const GlobeMap = props => {
 
         let p1, p2 = [0, 0], r1, r2 = [0, 0, 0];
         for (const country of countries) {
-            let name = country.properties.name;
+            name = country.properties.name;
             render(country);
 
             p1 = p2;
@@ -169,7 +168,10 @@ const GlobeMap = props => {
         draw(context)
     }, [draw])
 
-    return <canvas ref={canvasRef} {...props} width={width} height={height} />
+    return <div>
+        <div>{name}</div>
+        <canvas ref={canvasRef} {...props} width={width} height={height} />
+    </div>
 }
 
 export default GlobeMap;

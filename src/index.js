@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './index.css';
-import BarCharts from './BarCharts';
-import GlobeMap from './GlobeMap';
-import reportWebVitals from './reportWebVitals';
+import BarCharts from './bar-charts';
+import GlobeMap from './global-map';
+import LandingComponent from "./landing"
+import 'bootstrap-css-only/css/bootstrap.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,8 @@ root.render(
     {/* <App /> */}
     <Router>
       <Routes className="root-router">
-        <Route exact path='/' element={<BarCharts />} />
+        <Route path='/' element={<LandingComponent />} />
+        <Route exact path='/bars' element={<BarCharts />} />
         <Route exact path='/globe' element={<GlobeMap />} />
       </Routes>
     </Router>
