@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "cc5bbbf88e6e59e21470",
+    "revision": "4066435b20ca0c2fa661",
     "url": "/dva-final-project/static/css/main.4ebda007.chunk.css"
   },
   {
-    "revision": "cc5bbbf88e6e59e21470",
-    "url": "/dva-final-project/static/js/main.cc5bbbf8.chunk.js"
+    "revision": "4066435b20ca0c2fa661",
+    "url": "/dva-final-project/static/js/main.4066435b.chunk.js"
   },
   {
-    "revision": "638844ded67928211779",
+    "revision": "759a61bcfbf3e2b648ec",
     "url": "/dva-final-project/static/css/1.5ade2979.chunk.css"
   },
   {
-    "revision": "638844ded67928211779",
-    "url": "/dva-final-project/static/js/1.638844de.chunk.js"
+    "revision": "759a61bcfbf3e2b648ec",
+    "url": "/dva-final-project/static/js/1.759a61bc.chunk.js"
   },
   {
     "revision": "d2c7ccbaa8782e9dd91a",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/dva-final-project/static/media/alphabet.2476c334.csv"
   },
   {
-    "revision": "74bf2e15336b827ff7b7ecbe08114e7e",
+    "revision": "6f5ea8cb89a21b4049519fb223d1563b",
     "url": "/dva-final-project/index.html"
   }
 ];

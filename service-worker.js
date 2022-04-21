@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/dva-final-project/precache-manifest.137579f6ea6b7bc1b453416a5e3daa74.js"
+  "/dva-final-project/precache-manifest.897534cc9809181137bdad6320c94410.js"
 );
 
 workbox.clientsClaim();

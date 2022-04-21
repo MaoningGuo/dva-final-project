@@ -1,17 +1,17 @@
 {
   "main.css": "/dva-final-project/static/css/main.4ebda007.chunk.css",
-  "main.js": "/dva-final-project/static/js/main.cc5bbbf8.chunk.js",
-  "main.js.map": "/dva-final-project/static/js/main.cc5bbbf8.chunk.js.map",
+  "main.js": "/dva-final-project/static/js/main.4066435b.chunk.js",
+  "main.js.map": "/dva-final-project/static/js/main.4066435b.chunk.js.map",
   "static/css/1.5ade2979.chunk.css": "/dva-final-project/static/css/1.5ade2979.chunk.css",
-  "static/js/1.638844de.chunk.js": "/dva-final-project/static/js/1.638844de.chunk.js",
-  "static/js/1.638844de.chunk.js.map": "/dva-final-project/static/js/1.638844de.chunk.js.map",
+  "static/js/1.759a61bc.chunk.js": "/dva-final-project/static/js/1.759a61bc.chunk.js",
+  "static/js/1.759a61bc.chunk.js.map": "/dva-final-project/static/js/1.759a61bc.chunk.js.map",
   "runtime~main.js": "/dva-final-project/static/js/runtime~main.d2c7ccba.js",
   "runtime~main.js.map": "/dva-final-project/static/js/runtime~main.d2c7ccba.js.map",
   "static/media/final_data.csv": "/dva-final-project/static/media/final_data.3b90f8c8.csv",
   "static/media/alphabet.csv": "/dva-final-project/static/media/alphabet.2476c334.csv",
-  "static/css/1.5ade2979.chunk.css.map": "/dva-final-project/static/css/1.5ade2979.chunk.css.map",
   "static/css/main.4ebda007.chunk.css.map": "/dva-final-project/static/css/main.4ebda007.chunk.css.map",
+  "static/css/1.5ade2979.chunk.css.map": "/dva-final-project/static/css/1.5ade2979.chunk.css.map",
   "index.html": "/dva-final-project/index.html",
-  "precache-manifest.137579f6ea6b7bc1b453416a5e3daa74.js": "/dva-final-project/precache-manifest.137579f6ea6b7bc1b453416a5e3daa74.js",
+  "precache-manifest.897534cc9809181137bdad6320c94410.js": "/dva-final-project/precache-manifest.897534cc9809181137bdad6320c94410.js",
   "service-worker.js": "/dva-final-project/service-worker.js"
 }
