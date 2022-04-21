@@ -2,6 +2,7 @@ import React from "react";
 import * as d3 from "d3"
 
 import alphabets from "./alphabet.csv"
+import final_data from "./final_data.csv"
 
 function createBarChart(data, {
     x = (d, i) => i, // given d in data, returns the (ordinal) x-value
@@ -11,8 +12,8 @@ function createBarChart(data, {
     marginRight = 0, // the right margin, in pixels
     marginBottom = 30, // the bottom margin, in pixels
     marginLeft = 40, // the left margin, in pixels
-    width = 640, // the outer width of the chart, in pixels
-    height = 400, // the outer height of the chart, in pixels
+    width = 1200, // the outer width of the chart, in pixels
+    height = 900, // the outer height of the chart, in pixels
     xDomain, // an array of (ordinal) x-values
     xRange = [marginLeft, width - marginRight], // [left, right]
     yType = d3.scaleLinear, // y-scale type
@@ -34,10 +35,12 @@ function createBarChart(data, {
     console.log("xDomain")
     console.log(xDomain)
     xDomain = new d3.InternSet(xDomain);
-
-    console.log(X);
-    console.log(Y);
-    console.log(yRange);
+    console.log("xDomain")
+    console.log(xDomain)
+    //console.log(X);
+    //console.log(Y);
+    //console.log(yRange);
+    console.log("yDomain is");
     console.log(yDomain);
     // Omit any data not present in the x-domain.
     const I = d3.range(X.length).filter(i => xDomain.has(X[i]));
@@ -81,18 +84,19 @@ function createBarChart(data, {
             .attr("text-anchor", "start")
             .text(yLabel));
 
-    const bar = svg.append("g")
+/*      const bar = svg.append("g")
         .attr("fill", color)
         .selectAll("rect")
         .data(I)
         .join("rect")
         .attr("x", i => xScale(X[i]))
-        .attr("y", i => yScale(Y[i]))
-        .attr("height", i => yScale(0) - yScale(Y[i]))
-        .attr("width", xScale.bandwidth());
+        .attr("y", i => yScale(Y[i])+(yScale(0) - yScale(Y[i]))/2)
+        .attr("height", i => (yScale(0) - yScale(Y[i]))/2)
+        .attr("width", xScale.bandwidth()) */
 
-    if (title) bar.append("title")
-        .text(title);
+
+
+
 
     svg.append("g")
         .attr("transform", `translate(0,${height - marginBottom})`)
@@ -104,22 +108,27 @@ function createBarChart(data, {
 const BarChart = () => {
     const svgRef = React.useRef(null);
     const properties = {
-        x: d => d.letter,
-        y: d => d.frequency,
-        yFormat: "%",
-        yLabel: "↑ Frequency",
+        x: d => d.dt,
+        y: d => d.Temperature,
+        yFormat: ",",
+        yLabel: "↑ Temperature",
         height: 500,
         color: "steelblue",
         nodeRef: svgRef
     }
-
-    d3.csv(alphabets).then((data) => {
+    
+    d3.csv(final_data).then((data) => {
         // console.log(data)
-        createBarChart(data, properties);
+        data=data.filter(d=>(d.City=='Dresden' & d.Country=='Germany'))
+        data=data.map(o => { return {dt: o.dt, Temperature: o.Temperature} })
+        
+        //data=data.map(o => { return {dt: o.letter, Temperature: o.frequency} })
+        //console.log(data)
+        createBarChart(data.splice(0,24), properties);
     })
 
     return (
-            <svg ref={svgRef} width="800" height="600"/>
+            <svg ref={svgRef} width="1200" height="900"/>
     );
 
     // return <div>

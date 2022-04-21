@@ -1,0 +1,40 @@
+.app{
+    text-align:center;
+    margin:auto;
+}
+#title{
+    text-align: center;
+}
+#tooltip {
+    text-align: center;	
+    margin:auto;		
+    margin-top:20px;
+    margin-bottom:20px;
+    width: 180px;					
+    height: 32px;					
+    padding: 2px;				
+    font: 14px sans-serif;		
+    background: white;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;	
+    visibility: hidden;	
+    ;
+  }
+  li{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  #select-box{
+      margin-top:50px;
+        text-align:center
+  }
+  #selectButton{
+      text-align: center;
+  }
+  #svg-div{
+      margin:auto;
+      text-align: center;
+  }
