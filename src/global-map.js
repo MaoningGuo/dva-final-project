@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import * as topojson from "topojson-client";
 import * as d3 from "d3"
+import final_data from "./final_data.csv"
 
 //https://observablehq.com/@d3/world-tour
 class Versor {
@@ -90,6 +91,71 @@ const GlobeMap = props => {
     const sphere = ({ type: "Sphere" })
     const tilt = 20
     const height = Math.min(width, 720)
+    let output = []
+
+    d3.csv(final_data).then((data) => {
+        data=data.filter(d=>(d.dt=='1/1/13'))
+
+        data.forEach(o => {
+            let pres = output[o.Country]? output[o.Country]: 0
+            let count = 0;
+            let current = 0;
+            if (o.Pred_M1_SARIMAX != NaN) {
+                count++
+                current = current + parseFloat(o.Pred_M1_SARIMAX)
+            }
+            if (o.Pred_M2_HistoricalSimulation != NaN) {
+                current = current + parseFloat(o.Pred_M2_HistoricalSimulation)
+                count++
+            }
+
+            if (o.Pred_M3_NN != NaN) {
+                current = current + parseFloat(o.Pred_M3_NN)
+                count++
+            }
+
+            if (o.Pred_M3_SVR != NaN) {
+                current = current + parseFloat(o.Pred_M3_SVR)
+                count++
+            }
+
+            if (pres == 0) {
+                output[o.Country] = current / count;
+            }
+            else {
+                output[o.Country] =  (pres + (current / count)) / 2;
+            }
+            
+        });
+
+        for (const each in output) {
+
+            if (output[each] >= 0 && output[each] < 3) {
+                output[each] = "#cf060f";
+            } else if (output[each] > 3 && output[each] < 5) {
+                output[each] = "#ad050d";
+            }
+            else if (output[each] > 5 && output[each] < 10) {
+                output[each] = "#8b2634";
+            }
+            else if (output[each] > 10) {
+                output[each] = "#6f1e29";
+            }
+            else if (output[each] <= 0 && output[each] > -3) {
+                output[each] = "#c33649";
+            }
+            else if (output[each] < -3 && output[each] > -6) {
+                output[each] = "#ce4f60";
+            }
+            else if (output[each] < -6 && output[each] > -10) {
+                output[each] = "#d66b79";
+            }
+            else {
+                output[each] = "#e5a3ac";
+            }
+        }
+ 
+    });
 
     const draw = async (context) => {
         const land = topojson.feature(world, world.objects.land)
@@ -102,15 +168,24 @@ const GlobeMap = props => {
         const render = (country, arc) => {
             context.clearRect(0, 0, width, height);
 
-            context.beginPath();
             path(land);
             context.fillStyle = "#ccc";
             context.fill();
             context.beginPath();
-            context.beginPath();
+
+            for (const each of countries) {
+                path(each)
+                if (each.properties.name in output) {
+                    context.fillStyle = output[each.properties.name];
+                } else {
+                    context.fillStyle = "#ccc" 
+                }
+                context.fill();
+                context.beginPath();
+            }
 
             path(country);
-            context.fillStyle = "#f00";
+            context.fillStyle = "#db7093";
             context.fill();
             context.beginPath();
 
