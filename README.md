@@ -1,6 +1,6 @@
 # Interactive App for CS6242-DVA: Temperature Time Series Analysis
 
-This project is deployed on [here](https://maoningguo.github.io/dva-final-project/).
+This project is deployed [here](https://maoningguo.github.io/dva-final-project/).
 
 
 ## Requirements
