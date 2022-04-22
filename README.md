@@ -35,7 +35,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browse
 
 ## Deploy the application in github
 
- $ npm start deploy
+    $ npm run deploy
  
  Will build and deploy the application on the website
 
